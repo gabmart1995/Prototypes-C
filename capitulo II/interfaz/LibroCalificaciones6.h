@@ -12,10 +12,17 @@ class LibroCalificaciones
 {
     private:
         string nombreCurso;
+        string nombreInstructor;
 
     public:
-        LibroCalificaciones(string nombre);
+        
+        LibroCalificaciones(string, string);
+
         void establecerNombreCurso(string nombre);
         string obtenerNombreCurso();
+
+        void establecerNombreInstructor(string nombre);
+        string obtenerNombreInstructor();
+
         void mostrarMensaje();
 };

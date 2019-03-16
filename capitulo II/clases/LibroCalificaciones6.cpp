@@ -2,14 +2,15 @@
 //Gabriel Martínez
 #include "./../interfaz/LibroCalificaciones6.h"
 
-LibroCalificaciones::LibroCalificaciones(string nombre) 
+LibroCalificaciones::LibroCalificaciones(string nombre_curso, string nombre_instructor) 
 {
-    establecerNombreCurso(nombre);
+    establecerNombreCurso(nombre_curso);
+    establecerNombreInstructor(nombre_instructor);
 }
 
-void LibroCalificaciones::establecerNombreCurso(string nombre) 
+void LibroCalificaciones::establecerNombreCurso(string nombre_curso) 
 {
-    nombreCurso = nombre;
+    nombreCurso = nombre_curso;
 }
 
 string LibroCalificaciones::obtenerNombreCurso() 
@@ -17,8 +18,20 @@ string LibroCalificaciones::obtenerNombreCurso()
     return nombreCurso;
 }
 
+void LibroCalificaciones::establecerNombreInstructor(string nombre_instructor)
+{
+    nombreInstructor = nombre_instructor;
+}
+
+string LibroCalificaciones::obtenerNombreInstructor() 
+{
+    return nombreInstructor;
+}
+
 void LibroCalificaciones::mostrarMensaje() 
 {
-    cout << "Bienvenido al libro de calificaciones para\n" << obtenerNombreCurso()
+    cout << "\nBienvenido al libro de calificaciones para:\n" << obtenerNombreCurso()
     << "!" << endl;
+
+    cout << "Este curso es presentado por: " << obtenerNombreInstructor() << endl;
 }

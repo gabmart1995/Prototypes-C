@@ -5,11 +5,13 @@
 int main() 
 {
     //variables
-    LibroCalificaciones libro1("CS101 Introduccion a la programación en C++");
-    LibroCalificaciones libro2("CS102 Estructuras de datos en C++");
+    LibroCalificaciones libro1("CS101 Introduccion a la programación en C++", "Gabriel Martínez");
+    LibroCalificaciones libro2("CS102 Estructuras de datos en C++", "Alfonso Martínez");
 
-    cout << "libro1 creado para el curso: " << libro1.obtenerNombreCurso()
-    << "\nlibro2 creado para el curso: " << libro2.obtenerNombreCurso() << endl;
+    libro1.mostrarMensaje(); 
+    libro2.mostrarMensaje();
+
+    cout << endl;
 
     return 0;
 }

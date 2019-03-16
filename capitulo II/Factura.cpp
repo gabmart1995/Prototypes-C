@@ -9,7 +9,7 @@ int main()
     int cantidad, monto;
     
     //mensaje en pantalla
-    cout << "\t\nBienvenido a la clase factura\n" << endl;
+    cout << "\n\tBienvenido a la clase factura\n" << endl;
     
     cout << "Ingrese el numero del articulo: ";
     getline(cin, num_pieza);
