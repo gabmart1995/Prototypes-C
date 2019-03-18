@@ -21,7 +21,7 @@ int main()
     cout << "Escriba los kilometros usados (-1 para salir): ";
     cin >> kilometros;
     
-    while(kilometros != -1) 
+    while (kilometros != -1) 
     {
         cout << "Escriba los litros: ";
         cin >> litros;
@@ -39,7 +39,7 @@ int main()
 
         cout << "Total KPL: " << setprecision(6) << fixed << totalKPL << endl;
 
-        //repite el mensaje
+        //repite el el mensaje
         cout << "\nEscriba los kilometros usados (-1 para salir): ";
         cin >> kilometros;
     }
