@@ -8,32 +8,67 @@ void Analisis::procesarResultadosExamen()
     int contadorEstudiantes = 1;
     int resultado;
 
+    cout << "\n\tBienvenido a la clase Analisis\n" << endl;
+
     //procesa los 10 estudiantes
     while (contadorEstudiantes <= 10)
     {
+        Inicio:
+        
         cout << "Escriba un resultado (1 = aprobado, 2 = reprobado): ";
         cin >> resultado;
 
-        if (resultado == 1) 
-        {
-            //se incrementa el valor
-            aprobados++;
+        //funcion que valida las entradas
+        validarEntrada(resultado);
+        
+        if (obtenerValidacion() == true) {
+            
+            if (resultado == 1) 
+            {
+                aprobados++;
+            }
+
+            else
+            {
+                reprobados++;  
+            }
         }
 
+        // obtenerValidacion es falso
         else
         {
-            //postincremento
-            reprobados++;  
+            goto Inicio;
         }
         
         contadorEstudiantes++;
     }
 
     //muestra el numero de aprobados y reprobados
-    cout << "Aprobados: " << aprobados << "\nReprobados: " << reprobados << endl;
+    cout << "\nAprobados: " << aprobados << "\nReprobados: " << reprobados << endl
+    << endl;
 
     if (aprobados > 8) 
     {
-        cout << "Aumentar colegiatura" << endl;
+        cout << "Aumentar colegiatura\n" << endl;
     }
+
+}
+
+void Analisis::validarEntrada(int resultado) 
+{
+    if (resultado != 1 && resultado != 2)
+    {
+        cout << "Ingrese los datos solicitados en pantalla.\n" << endl;
+        validacion = false;
+    }
+    
+    else 
+    {
+       validacion = true;
+    }
+}
+
+bool Analisis::obtenerValidacion()
+{
+    return validacion;
 }
