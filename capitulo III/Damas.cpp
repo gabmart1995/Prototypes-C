@@ -6,18 +6,20 @@ using namespace std;
 int main()
 {
     int contador = 1;
-    int posicion;
+    int modulo;
+
+    cout << endl;
 
     while (contador <= 8) 
     {
         //determina si es par
-        posicion = contador % 2;
+        modulo = contador % 2;
 
-        if (posicion == 1)
+        if (modulo == 1)
         {
-            for (int i = 1; i <= contador; i++)
+            for (int i = 1; i <= 8; i++)
             {
-                if (i == contador)
+                if (i == 8)
                 {
                     cout << endl;
                 }
@@ -29,15 +31,13 @@ int main()
                 }
                 
             }
-
-            contador++;
         }
 
         else
         {
-            for (int j = 1; j <= contador; j++)
+            for (int j = 1; j <= 8; j++)
             {
-                if (j == contador)
+                if (j == 8)
                 {
                     cout << endl;
                 }
@@ -47,11 +47,12 @@ int main()
                     cout << " ";
                     cout << "* ";
                 }
-                
-                contador++;
             }
         }
-    }
 
+        contador++;
+    }
+    
+    cout << endl;
     return 0;
 }
