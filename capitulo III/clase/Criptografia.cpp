@@ -28,17 +28,13 @@ void Criptografia::establecerCifrado(int entero)
 
         //separa el entero
         entero /= 10;
-    } 
 
-     //operacion de cifrado
-    digito1 = (digito1 + 7) % 10;
-    digito2 = (digito2 + 7) % 10;
-    digito3 = (digito3 + 7) % 10;
-    digito4 = (digito4 + 7) % 10;
+        
+    } 
 }
 
 void Criptografia::mostrarCodigoCifrado()
 {
-    cout << "El numero cifrado es: " << digito3 << digito4 
-    << digito1 << digito2 << endl << endl;
+    cout << "El numero cifrado es: " << digito1 << " " << digito2 
+    << " " << digito3 << " " << digito4 << endl << endl;
 }
