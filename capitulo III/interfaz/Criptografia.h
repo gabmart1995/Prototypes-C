@@ -6,13 +6,10 @@ using namespace std;
 class Criptografia {
 
     public:        
-        void establecerCifrado(int);
+        void establecerDigitos(int);
+        void establecerCriptografia(int, int, int, int);
         void mostrarCodigoCifrado();
 
-       /* void establecerDescifrado(int);
-        int obtenerNumeroDescifrado();*/
-
     private:
-        int numero_cifrado;
         int digito1, digito2, digito3, digito4;
 };

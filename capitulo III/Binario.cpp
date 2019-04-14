@@ -23,7 +23,7 @@ int main()
         if (digito == 1) 
         {
             //se llama a la funcion potencia: pow(base, exponente)    
-            decimal = decimal + pow(2, exponente); 
+            decimal += pow(2, exponente); 
         }
 
         //incrementa el exponente

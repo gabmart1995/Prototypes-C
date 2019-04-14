@@ -1,4 +1,4 @@
-//Diseño de una calculadora basica en C++
+//Interfaz de una calculadora basica en C++
 // @param Gabriel Martínez
 #include <iostream>
 #include <stdlib.h> //libreria que incluye los subprocesos de consola Bash o Cmd
@@ -12,11 +12,12 @@ class Calculadora {
         int resultado;
 
     public:
-        void setNumbers(int, int);
-        void add();
-        void substract();
-        void multiply();
-        void divider();
-        void module();
-        int getResultado();
+        void mostrarMenu();
+        void establecerNumeros(int, int);
+        void sumar();
+        void restar();
+        void multiplicar();
+        void dividir();
+        void modulo();
+        int obtenerResultado();
 };

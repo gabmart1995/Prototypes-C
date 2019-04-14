@@ -4,15 +4,14 @@
 int main()
 {
     int numero;
+    Criptografia cripto1;
 
     cout << "\n\tBienvenido a la clase Criptografia\n" << endl;
 
-    cout << "Ingrese el numero que desee cifrar: ";
+    cout << "Ingrese el codigo de 4 digitos que desee cifrar: ";
     cin >> numero;
 
-    Criptografia cripto1;
-    cripto1.establecerCifrado(numero);
-    cripto1.mostrarCodigoCifrado();
+    cripto1.establecerDigitos(numero);
     
     return 0;
 }
