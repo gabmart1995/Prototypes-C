@@ -1,4 +1,4 @@
-#include "./../interfaz/Calculadora.h"
+#include "./../interfaces/Calculadora.h"
 
 void Calculadora::establecerNumeros(int num1, int num2)
 {

@@ -1,5 +1,5 @@
 //Codigo fuente
-#include "./clase/Calculadora.cpp"
+#include "./../clase/Calculadora.cpp"
 
 int main()
 {
