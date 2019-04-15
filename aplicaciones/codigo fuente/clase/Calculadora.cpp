@@ -23,15 +23,7 @@ void Calculadora::multiplicar()
 
 void Calculadora::dividir()
 {
-    if (numero2 <= 0)
-    {
-        cout << "no se puede dividir un numero por 0";
-    }
-
-    else 
-    {
-        resultado = numero1 / numero2;
-    }
+    resultado = numero1 / numero2;
 }
 
 void Calculadora::modulo()
@@ -47,7 +39,7 @@ int Calculadora::obtenerResultado()
 void Calculadora::mostrarMenu()
 {
     //imprime mensaje
-    cout << "\nMenu de operaciones\n" << endl;
+    cout << "\n\tMenu de operaciones:\n" << endl;
     cout << "1.- Suma\n";
     cout << "2.- Resta\n";
     cout << "3.- Multiplicacion\n";
