@@ -59,7 +59,8 @@ void LibroCalificaciones::recibirCalificaciones()
     cout << "Escriba las calificaciones por letra." << endl 
     << "Escriba el caracter EOF para terminar la entrada.\n" << endl; 
 
-    while ((calificacion = cin.get()) != EOF)
+    while ((calificacion = cin.get()) != EOF) 
+    //lee el caracter
     {
         //determina la cual calificacion que se introdujo
         switch(calificacion)
@@ -89,7 +90,7 @@ void LibroCalificaciones::recibirCalificaciones()
                 fCuenta++;
                 break;
 
-            case ' ': //ignosra los espacios en blanco
+            case ' ': //ignora los espacios en blanco
             case '\n': //ignora los saltos de linea
             case '\t': //ignora los tabuladores
                 break;
