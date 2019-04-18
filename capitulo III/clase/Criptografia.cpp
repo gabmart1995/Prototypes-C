@@ -17,7 +17,7 @@ void Criptografia::establecerDigitos(int entero)
 
     else 
     {
-        cout << "Introduzca un numero de 4 digitos" << endl;
+        cout << "Introduzca un numero de 4 digitos valido" << endl;
     } 
 }
 
@@ -34,8 +34,6 @@ void Criptografia::establecerCriptografia(int num1, int num2, int num3, int num4
 
 void Criptografia::mostrarCodigoCifrado()
 {
-    cout << "\nEl codigo cifrado es:" << endl; 
-
-    cout << digito3 << "\t" << digito4 << "\t" 
-    << digito1 << "\t" << digito2 << endl << endl;
+    cout << "El codigo cifrado es: "; 
+    cout << digito3 << digito4 << digito1 << digito2 << endl << endl;
 }

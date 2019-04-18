@@ -11,5 +11,8 @@ class Criptografia {
         void mostrarCodigoCifrado();
 
     private:
-        int digito1, digito2, digito3, digito4;
+        int digito1, 
+            digito2, 
+            digito3, 
+            digito4;
 };
