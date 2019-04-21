@@ -25,18 +25,8 @@ void Euler::calcularEulerExponencial(int numero)
 
     while (contador <= numero)
     {
-         num_factorial *= contador;
-
-        if (contador == 1)
-        {
-            num_euler += (1 / num_factorial);
-        }
-
-        else 
-        {
-            num_euler = pow((num_euler + (1 / num_factorial)), contador);
-        }
-
+        num_factorial *= contador;
+        num_euler += pow((1 / num_factorial), contador);
         contador++;
     }
 }
