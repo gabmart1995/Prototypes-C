@@ -2,17 +2,15 @@
 
 void Factorial::establecerNumeros(int num1) {
 
-    num_factorial = 1;
-
     if (num1 >= 0)
     {
-        calcularFactorial(num1);
+        num_factorial = 1;
+        validacion = true;
     }
 
     else 
     {
-        cout << "Ingrese un número mayor o igual a 0\n" << endl;
-        return;
+        validacion = false;
     }
 }
 
@@ -36,13 +34,19 @@ void Factorial::calcularFactorial(int numero)
     }
 }
 
+void Factorial::mostrarMensaje()
+{
+    cout << "\nEl resultado del numero factorial es: " << obtenerFactorial() 
+    << endl;
+}
+
+bool Factorial::obtenerValidacion()
+{
+    return validacion;
+}
+
 int Factorial::obtenerFactorial()
 {
     return num_factorial;
 }
 
-void Factorial::mostrarMensaje()
-{
-    cout << "El resultado del numero factorial es: " << obtenerFactorial() 
-    << endl << endl;
-}

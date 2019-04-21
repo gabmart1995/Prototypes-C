@@ -1,7 +1,6 @@
 //Clase que calcula el factoral de un número
 //Gabriel Martínez
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 class Factorial {
@@ -11,8 +10,9 @@ class Factorial {
         void calcularFactorial(int);
         int obtenerFactorial();
         void mostrarMensaje();
+        bool obtenerValidacion();
 
     private:
-        int numero;
         int num_factorial;
+        bool validacion;
 };
