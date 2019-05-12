@@ -12,20 +12,35 @@ int main()
     double principal = 1000.0;
     double tasa = 0.05;
 
-    cout << "\nAño" << setw(21) << "Monto $\n" << endl;
-
-    //establece los parametros
+    //establece los parametros de la variable double
     cout << fixed << setprecision(2);
 
+    cout << "\n\tTasa de Interés compuesto. Aumento 1%" << endl;
+
+    Inicio:
     for (int i = 1; i <= 10; i++)
     {
         monto = principal * pow(1.0 + tasa, i);
 
+        if (i == 1)
+        {
+            cout << "\nAño" << setw(21) << "Monto $"  << setw(21) 
+            << "Tasa: " << tasa << "%\n" << endl;
+        }
+
         //imprime en pantalla
         cout << i << setw(21) << monto << endl;
     }
+    
+    //separador
+     cout << "\n|-----------------------------------------------------|\n" << endl;
 
-    cout << endl;
-    //cierra el programa
+    if (tasa <= 0.09)
+    {
+        tasa += 0.01;
+        goto Inicio;
+    }
+
     return 0;
+
 }
