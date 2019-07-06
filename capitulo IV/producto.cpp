@@ -6,12 +6,12 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
+
     int producto = 1;
 
     cout << "\n\tProducto de números impares\n";  
-    cout << endl;  //imprime una nueva linea
+    cout << endl;  // imprime una nueva linea
 
     for (int i = 1; i <= 15; i += 2)
     {    
@@ -22,5 +22,6 @@ int main()
     }
     
     cout << endl;
+    
     return 0;
 }

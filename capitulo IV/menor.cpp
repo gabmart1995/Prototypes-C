@@ -1,10 +1,11 @@
-//Gabriel Martínez 
-//menor de varios números
+// Gabriel Martínez 
+// menor de varios números
+
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
+
     int limite;
     int numero_menor;
     int numero;
@@ -13,25 +14,24 @@ int main()
     cin >> limite;
     cout << endl;
 
-    for (int contador = 1; contador <= limite; contador++)
-    {
+    for (int contador = 1; contador <= limite; contador++) {
         cout << "Ingrese un número: ";
         cin >> numero;
 
-        if (contador == 1)
-        {
+        if (contador == 1) {
+
             numero_menor = numero;
         }
 
-        else 
-        {
-            if (numero < numero_menor) 
-            {
+        else  {
+            
+            if (numero < numero_menor) {
+
                 numero_menor = numero;
             }
 
-            else if (numero >= numero_menor) 
-            {
+            else if (numero >= numero_menor) {
+                
                 continue;
             }
         }
