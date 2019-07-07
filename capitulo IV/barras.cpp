@@ -1,21 +1,15 @@
-// Programa que imprime graficos convencionales de barra.
+// Codigo Cliente
 
-#include <iostream>
-
-using namespace std;
+#include "./interfaz/barras.h"
+#include "./clase/barras.cpp"
 
 int main() {
 
 	int contador = 1;
 
-	int num1,
-		num2,
-		num3,
-		num4,
-		num5;
+	int num1, num2, num3, num4, num5;
 
-	void imprimirBarras( int, int, int, int, int );
-	bool validarNumero( int );
+	Barra barra;  // clase barra
 
 	cout << endl;
 
@@ -23,29 +17,90 @@ int main() {
 
 	while( contador <= 5 ) {
 		
+		Inicio:
+			
 		cout << "Ingrese los valores entre el 1 al 30: ";
 
-		switch (contador) {
+		switch ( contador ) {
 			case 1:
 				
 				cin >> num1;
-				break;
+
+				barra.validarNumero( num1 );
+
+				if ( barra.obtenerValidacion() == true ) {
+					barra.num1 = num1;
+				}
+
+				else {
+					barra.mostrarMensaje();
+					goto Inicio;
+				} 
+
+				break;				
 
 			case 2:
 				cin >> num2;
+
+				barra.validarNumero( num2 );
+
+				if ( barra.obtenerValidacion() == true ) {
+					barra.num2 = num2;
+				}
+
+				else {
+					barra.mostrarMensaje();
+					goto Inicio;
+				} 
+
 				break;
 
 			case 3:
 				cin >> num3;
+
+				barra.validarNumero( num3 );
+
+				if ( barra.obtenerValidacion() == true ) {
+					barra.num3 = num3;
+				}
+
+				else {
+					barra.mostrarMensaje();
+					goto Inicio;
+				} 
+
 				break;
 
 			case 4:
 				cin >> num4;
+
+				barra.validarNumero( num4 );
+
+				if ( barra.obtenerValidacion() == true ) {
+					barra.num4 = num4;
+				}
+
+				else {
+					barra.mostrarMensaje();
+					goto Inicio;
+				} 
+
 				break;
 
 			case 5:
-
 				cin >> num5;
+
+				barra.validarNumero( num5 );
+
+				if ( barra.obtenerValidacion() == true ) {
+					barra.num5 = num5;
+				}
+
+				else {
+					barra.mostrarMensaje();
+					goto Inicio;
+				} 
+
 				break;
 		}
 
@@ -54,44 +109,15 @@ int main() {
 
 	cout << endl;
 
-	imprimirBarras( num1, num2, num3, num4, num5 );
+	// imprime las barras
+	barra.imprimirBarras( barra.num1 );
+	barra.imprimirBarras( barra.num2 );
+	barra.imprimirBarras( barra.num3 );
+	barra.imprimirBarras( barra.num4 );
+	barra.imprimirBarras( barra.num5 );
 
 	cout << endl;
 
-}
-
-void imprimirBarras( int num1, int num2, int num3, int num4, int num5 ) {
-
-	cout << "Valor 1: " << num1 << " ";
-
-	for ( int barra1 = 1; barra1 <= num1 ; barra1++ ) {
-		cout << "*";
-	}
-
-	cout << endl << "Valor 2: " << num2 << " ";
-
-	for ( int barra2 = 1; barra2 <= num2 ; barra2++ ) {
-		cout << "*";
-	}
-
-	cout << endl << "Valor 3: " << num3 << " ";
-
-	for ( int barra3 = 1; barra3 <= num3 ; barra3++ ) {
-		cout << "*";
-	}
-
-	cout << endl << "Valor 4: " << num4 << " ";
-
-	for ( int barra4 = 1; barra4 <= num4 ; barra4++ ) {
-		cout << "*";
-	}
-
-	cout << endl << "Valor 5: " << num5 << " ";
-
-	for ( int barra5 = 1; barra5 <= num5 ; barra5++ ) {
-		cout << "*";
-	}
-
-	cout << endl;	
+	return 0;
 }
 
