@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include <algorithm>  // biblioteca de manipulacion de listas
+#include <cmath>
+#include <regex> // biblioteca de expresiones regulares
 
 using namespace std;
 
@@ -11,6 +13,10 @@ struct ascii_caracter {
 };
 
 vector<ascii_caracter> table_ascii;
+
+// regular exoresions
+regex str_expr("^[a-zA-Z]+$");
+regex bin_expr("^[0-1]+$");
 
 void set_vector() {
 	
@@ -124,11 +130,10 @@ void set_vector() {
 }
 
 vector<ascii_caracter> get_vector() {
-		return table_ascii;
+	return table_ascii;
 }
 
-string inverseString( string result ) {
-	
+string inverse_string( string result ) {
 	
 	reverse( result.begin(), result.end() );
 	
@@ -143,7 +148,7 @@ string get_binary( string letter ) {
 	
 	string binary;
 	
-	for (int i = 0; i < table_ascii.size(); i++) {
+	for ( int i = 0; i < table_ascii.size(); i++ ) {
 		
 		if ( table_ascii[i].character == letter ) {
 			
@@ -158,15 +163,13 @@ string get_binary( string letter ) {
 				code /= 2;
 			}
 			
+			// parsea el resultado a string, que corresponde al ultimo digito
 			binary += to_string( code );
-			
-			// bit de paridad
-			binary += "0";
 		}
 	}
 	
-	// invierte la cadena binaria
-	binary = inverseString( binary );
+	// invierte la cadena binaria para obtener el resultado real
+	binary = inverse_string( binary );
 	
 	return binary;
 }
@@ -174,16 +177,68 @@ string get_binary( string letter ) {
 string character_to_binary( string word ) {
 	
 	string binary_chain;
+	string letter;
+	
+	if ( !regex_match( word, str_expr ) ) {	
+		
+		binary_chain = "Expresión no valida";
+		
+		return binary_chain;
+	}
 	
 	// separa las letras y las transforma 
 	for ( int i = 0; i < word.size(); i++ ) {
 		
-		string letter = string( 1, word[i] );
+		letter = string( 1, word[i] );
 		
 		binary_chain += get_binary( letter );
 	}
 	
-	// cout << binary_chain << endl;
-
 	return binary_chain;
+}
+
+string get_caracter( string binary_caracter ) {
+		
+	int exponent = 0;
+	int value = 0;
+	
+	vector<ascii_caracter> table_ascii = get_vector();
+	
+	// binario a decimal
+	for ( int i = ( binary_caracter.size() - 1 ); i >= 0; i-- ) {
+		
+		// se parsea de un puntero char* a string
+		if ( string( 1, binary_caracter[i] ) == "1" ) {
+			value = value + pow( 2, exponent ); 
+		}
+			
+		exponent++;
+	}
+	
+	// una vez obtenido el valor se busca en la tabla
+	for ( int i = 0; i < table_ascii.size(); i++ ) {
+		
+		if ( table_ascii[i].code == value ) {
+			return table_ascii[i].character;
+		}
+ 	}
+}
+
+string binary_to_caracter( string binary ) {
+	
+	string word;
+	
+	if ( !regex_match( binary, bin_expr ) ) {
+
+		word = "Expresión no válida";
+		
+		return word;
+	}
+	
+	// separa 7 digitos binarios y busca el caracter
+	for ( int i = 0; i < binary.size();  i += 7 ) {
+		word += get_caracter( binary.substr( i, 7 ));
+	}
+	
+	return word;
 }

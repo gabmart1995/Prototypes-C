@@ -37,13 +37,20 @@ int main() {
 			}
 			
 			case 2: {
-				cout << "Convertir a caracter" << endl;
+				
+				cout << "Ingresa el binario: ";
+				cin >> word;
+				
+				response = binary_to_caracter( word );
+				
+				cout << "\nEl resultado es: " << response << endl << endl;
+				
 				break;
 			}
 			
 			case 3: {
 				
-				// cambia el estado de la app y cierra la sesion
+				// cambia el estado y cierra la app
 				app = false;
 				
 				break;
