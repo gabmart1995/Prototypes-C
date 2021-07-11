@@ -222,6 +222,8 @@ string get_caracter( string binary_caracter ) {
 			return table_ascii[i].character;
 		}
  	}
+ 	
+ 	return "";
 }
 
 string binary_to_caracter( string binary ) {
