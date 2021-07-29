@@ -52,7 +52,7 @@ int main( int argc, char *argv[] ) {
 		cout << endl;
 		
 		// se debe limpiar el buffer al finalizar cada iteracion del bucle
-		cleanBuffer();
+		//cleanBuffer();
 	}
 	
 	for ( int i = 0; i < get_length_employees(); i++ ) {
